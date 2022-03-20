@@ -26,6 +26,7 @@ namespace GradeBook.GradeBooks
                 throw new ArgumentException("A Name is required to add a student to a gradebook.");
             Students.Add(student);
         }
+        public GradeBookType Type { get; set; }
 
         public void RemoveStudent(string name)
         {
