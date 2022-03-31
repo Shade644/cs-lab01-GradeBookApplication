@@ -27,6 +27,7 @@ namespace GradeBook.GradeBooks
             Students.Add(student);
         }
         public GradeBookType Type { get; set; }
+        public bool IsWeighted { get; set; }
 
         public void RemoveStudent(string name)
         {
