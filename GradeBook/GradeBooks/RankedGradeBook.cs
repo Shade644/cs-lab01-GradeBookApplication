@@ -18,7 +18,6 @@ namespace GradeBook.GradeBooks
             if (Students.Count < 5)
             {
                 Console.WriteLine("Ranked grading requires at least 5 students.");
-                
             }
             if (averageGrade > 80)
                 return 'A';
@@ -30,6 +29,14 @@ namespace GradeBook.GradeBooks
                 return 'D';
             else
                 return 'F';
+        }
+        public override void CalculateStatistics()
+        {
+            if (Students.Count < 5)
+            {
+                Console.WriteLine("Ranked grading requires at least 5 students.");
+            }
+            else base.CalculateStatistics();
         }
 
     }
