@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-
+using GradeBook.GradeBooks;
 using GradeBook.Enums;
 using System.Collections.Generic;
 using System.IO;
@@ -9,15 +9,17 @@ using Newtonsoft.Json.Linq;
 
 namespace GradeBook.GradeBooks
 {
-    public abstract class BaseGradeBook
+    public class BaseGradeBook
     {
         public string Name { get; set; }
         public List<Student> Students { get; set; }
+        public bool IsWeighted { get; set; }
 
-        public BaseGradeBook(string name)
+        public BaseGradeBook(string name, bool isWeight)
         {
             Name = name;
             Students = new List<Student>();
+            IsWeighted = isWeight;
         }
 
         public void AddStudent(Student student)
@@ -27,7 +29,7 @@ namespace GradeBook.GradeBooks
             Students.Add(student);
         }
         public GradeBookType Type { get; set; }
-        public bool IsWeighted { get; set; }
+      
 
 
         public void RemoveStudent(string name)
