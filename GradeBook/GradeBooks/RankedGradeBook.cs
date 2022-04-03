@@ -17,8 +17,9 @@ namespace GradeBook.GradeBooks
         {
             if (Students.Count < 5)
             {
-                Console.WriteLine("Ranked grading requires at least 5 students.");
+                throw new Exception("Ranked grading requires at least 5 students.");
             }
+
             if (averageGrade > 80)
                 return 'A';
             else if (averageGrade < 80 && averageGrade >= 60)
